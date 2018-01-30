@@ -58,6 +58,24 @@ class WelcomeViewController: UIViewController {
                 return
             }
             
+            // Email verification
+            guard let currentUser = user, currentUser.isEmailVerified else {
+                let alertController = UIAlertController(title: "Login Error", message: "You haven't confirmed your email address yet. We sent you a confirmation email when you sign up. Please click the verification link in that email. If you need us to send the confirmation email again, please tap Resend Email.", preferredStyle: .alert)
+                
+                let okayAction = UIAlertAction(title: "Resend email", style: .default, handler: { (action) in
+                    
+                    user?.sendEmailVerification(completion: nil)
+                })
+                let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+                
+                alertController.addAction(okayAction)
+                alertController.addAction(cancelAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+                
+                return
+            }
+            
             // Dismiss keyboard
             self.view.endEditing(true)
             

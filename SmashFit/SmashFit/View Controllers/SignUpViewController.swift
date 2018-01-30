@@ -78,11 +78,18 @@ class SignUpViewController: UIViewController {
             // Dismiss the keyboard
             self.view.endEditing(true)
             
-            // Present the main view
-            if let mainViewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
-                UIApplication.shared.keyWindow?.rootViewController = mainViewController
+            // Send verification email
+            user?.sendEmailVerification(completion: nil)
+            
+            let alertController = UIAlertController(title: "Email Verification", message: "We've just sent a confirmation email to your email address. Please check your inbox and click the verification link in that email to complete the sign up.", preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: { (action) in
+                
+                // Dismiss the current view controller
                 self.dismiss(animated: true, completion: nil)
-            }
+            })
+            alertController.addAction(okayAction)
+            
+            self.present(alertController, animated: true, completion: nil)
         }
     }
 }
