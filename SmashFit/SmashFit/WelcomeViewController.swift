@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WelcomeViewController.swift
 //  SmashFit
 //
 //  Created by Kudryatzhan Arziyev on 1/29/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class WelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

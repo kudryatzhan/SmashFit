@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA43BEFCBAA0F353C6F9B97B /* Pods_SmashFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E7F61958F9A8924F0A5FAE /* Pods_SmashFit.framework */; };
 		B227A6212020464C00E5BAEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227A6202020464C00E5BAEE /* AppDelegate.swift */; };
-		B227A6232020464C00E5BAEE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227A6222020464C00E5BAEE /* ViewController.swift */; };
+		B227A6232020464C00E5BAEE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227A6222020464C00E5BAEE /* WelcomeViewController.swift */; };
 		B227A6262020464C00E5BAEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B227A6242020464C00E5BAEE /* Main.storyboard */; };
 		B227A6292020464C00E5BAEE /* SmashFit.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B227A6272020464C00E5BAEE /* SmashFit.xcdatamodeld */; };
 		B227A62B2020464C00E5BAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B227A62A2020464C00E5BAEE /* Assets.xcassets */; };
@@ -21,7 +21,7 @@
 		56D3CC8EAC05D522C009A69C /* Pods-SmashFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmashFit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmashFit/Pods-SmashFit.debug.xcconfig"; sourceTree = "<group>"; };
 		B227A61D2020464C00E5BAEE /* SmashFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmashFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B227A6202020464C00E5BAEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B227A6222020464C00E5BAEE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B227A6222020464C00E5BAEE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		B227A6252020464C00E5BAEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B227A6282020464C00E5BAEE /* SmashFit.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmashFit.xcdatamodel; sourceTree = "<group>"; };
 		B227A62A2020464C00E5BAEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				B227A6202020464C00E5BAEE /* AppDelegate.swift */,
-				B227A6222020464C00E5BAEE /* ViewController.swift */,
+				B227A6222020464C00E5BAEE /* WelcomeViewController.swift */,
 				B227A6242020464C00E5BAEE /* Main.storyboard */,
 				B227A62A2020464C00E5BAEE /* Assets.xcassets */,
 				B227A62C2020464C00E5BAEE /* LaunchScreen.storyboard */,
@@ -228,7 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B227A6232020464C00E5BAEE /* ViewController.swift in Sources */,
+				B227A6232020464C00E5BAEE /* WelcomeViewController.swift in Sources */,
 				B227A6212020464C00E5BAEE /* AppDelegate.swift in Sources */,
 				B227A6292020464C00E5BAEE /* SmashFit.xcdatamodeld in Sources */,
 			);
