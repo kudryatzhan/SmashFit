@@ -12,6 +12,7 @@
     <customFonts key="customFonts">
         <array key="AvenirNext.ttc">
             <string>AvenirNext-Bold</string>
+            <string>AvenirNext-DemiBold</string>
             <string>AvenirNext-Regular</string>
         </array>
     </customFonts>
@@ -148,7 +149,7 @@
         <!--Sign Up-->
         <scene sceneID="lA5-Sp-plW">
             <objects>
-                <viewController id="bnm-3N-fhB" sceneMemberID="viewController">
+                <viewController id="bnm-3N-fhB" customClass="SignUpViewController" customModule="SmashFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZU8-4H-syB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,6 +167,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerAccount:" destination="bnm-3N-fhB" eventType="touchUpInside" id="cs7-ub-HOf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hnX-7J-Kww">
                                 <rect key="frame" x="120" y="523" width="135" height="30"/>
@@ -251,7 +255,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.1127905324" green="0.13621926309999999" blue="0.1901795268" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.11372549019607843" green="0.13725490196078433" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="uab-N8-gaB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="maQ-eD-OPt">
@@ -261,6 +265,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="LTk-J2-FCV" id="bQ7-uS-0GQ"/>
+                        <outlet property="nameTextField" destination="De3-LH-h71" id="S55-b4-2dr"/>
+                        <outlet property="passwordTextField" destination="UTy-oJ-OKw" id="8FH-p4-tyE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zdt-a9-Jzl" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="2rQ-KV-Pig" userLabel="Exit" sceneMemberID="exit"/>
@@ -285,8 +294,75 @@
             </objects>
             <point key="canvasLocation" x="985" y="134"/>
         </scene>
+        <!--WOD-->
+        <scene sceneID="sJf-FJ-3DP">
+            <objects>
+                <viewController id="lVW-VK-o4b" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CVe-ib-Yg3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="invictusLabel" translatesAutoresizingMaskIntoConstraints="NO" id="CuV-K6-VrI">
+                                <rect key="frame" x="64" y="65" width="247" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tuesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wtw-ob-TnA">
+                                <rect key="frame" x="92" y="170" width="191" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="48"/>
+                                <color key="textColor" red="0.73779147863388062" green="0.083976797759532928" blue="0.087495289742946625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jan/30/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPS-ee-9aS">
+                                <rect key="frame" x="110" y="244" width="154" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gd-EX-odR">
+                                <rect key="frame" x="64" y="302" width="245" height="245"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Metcon                          Metcon (AMRAP - Reps)
+AMRAP 14
+20' overhead plate walking lunge 45/35
+10 plate burpees
+10 toes to bar
+30 double unders</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11372549019607843" green="0.13725490196078433" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="vIO-39-Xga"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="WOD" id="tl5-bg-WnK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cfn-7k-uj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="984.79999999999995" y="954.87256371814101"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="E2M-O5-LmU">
+            <objects>
+                <tabBarController storyboardIdentifier="MainView" automaticallyAdjustsScrollViewInsets="NO" id="9UY-dy-E7B" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Sz-jV-Z09">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="lVW-VK-o4b" kind="relationship" relationship="viewControllers" id="8Gc-at-ROj"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iTl-bP-2wm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="955"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="invictusLabel" width="1211" height="300"/>
         <image name="lock" width="128" height="128"/>
         <image name="mail" width="128" height="128"/>
         <image name="users" width="128" height="128"/>

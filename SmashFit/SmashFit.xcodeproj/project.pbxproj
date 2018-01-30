@@ -15,6 +15,7 @@
 		B227A62B2020464C00E5BAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B227A62A2020464C00E5BAEE /* Assets.xcassets */; };
 		B227A62E2020464C00E5BAEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B227A62C2020464C00E5BAEE /* LaunchScreen.storyboard */; };
 		B227A6362020478700E5BAEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B227A6352020478700E5BAEE /* GoogleService-Info.plist */; };
+		B2A99DA920205CEB00EE8389 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DA820205CEB00EE8389 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B227A62D2020464C00E5BAEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B227A62F2020464C00E5BAEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B227A6352020478700E5BAEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B2A99DA820205CEB00EE8389 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		EB8823B5C9BFF4F02D378979 /* Pods-SmashFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmashFit.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmashFit/Pods-SmashFit.release.xcconfig"; sourceTree = "<group>"; };
 		F0E7F61958F9A8924F0A5FAE /* Pods_SmashFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmashFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -83,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				B227A6202020464C00E5BAEE /* AppDelegate.swift */,
-				B227A6222020464C00E5BAEE /* WelcomeViewController.swift */,
+				B2A99DAA20205CF100EE8389 /* View Controllers */,
 				B227A6242020464C00E5BAEE /* Main.storyboard */,
 				B227A62A2020464C00E5BAEE /* Assets.xcassets */,
 				B227A62C2020464C00E5BAEE /* LaunchScreen.storyboard */,
@@ -92,6 +94,15 @@
 				B227A6352020478700E5BAEE /* GoogleService-Info.plist */,
 			);
 			path = SmashFit;
+			sourceTree = "<group>";
+		};
+		B2A99DAA20205CF100EE8389 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B227A6222020464C00E5BAEE /* WelcomeViewController.swift */,
+				B2A99DA820205CEB00EE8389 /* SignUpViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +241,7 @@
 			files = (
 				B227A6232020464C00E5BAEE /* WelcomeViewController.swift in Sources */,
 				B227A6212020464C00E5BAEE /* AppDelegate.swift in Sources */,
+				B2A99DA920205CEB00EE8389 /* SignUpViewController.swift in Sources */,
 				B227A6292020464C00E5BAEE /* SmashFit.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
