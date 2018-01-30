@@ -290,7 +290,7 @@
         <!--Reset password-->
         <scene sceneID="lop-fp-Mta">
             <objects>
-                <viewController id="kCd-kA-DWa" sceneMemberID="viewController">
+                <viewController id="kCd-kA-DWa" customClass="ResetPasswordViewController" customModule="SmashFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qC4-U5-4Xc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -308,6 +308,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resetPassword:" destination="kCd-kA-DWa" eventType="touchUpInside" id="1gI-vs-xYN"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tZG-N6-SI9">
                                 <rect key="frame" x="45" y="216" width="285" height="45"/>
@@ -347,12 +350,15 @@ we will send you the link to reset the password</string>
                         <viewLayoutGuide key="safeArea" id="oSE-Fc-CLa"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reset password" id="lsM-Uk-Tow">
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="uzy-qP-fFH">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uzy-qP-fFH">
                             <connections>
                                 <segue destination="XCE-I8-c50" kind="unwind" unwindAction="unwindToWelcomeViewWithSegue:" id="C4R-CC-r6Q"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="v0D-2B-WIk" id="Ra0-5f-lgb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lXB-xF-vJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
