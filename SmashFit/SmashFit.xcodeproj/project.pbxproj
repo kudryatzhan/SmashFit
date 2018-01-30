@@ -16,6 +16,7 @@
 		B227A62E2020464C00E5BAEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B227A62C2020464C00E5BAEE /* LaunchScreen.storyboard */; };
 		B227A6362020478700E5BAEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B227A6352020478700E5BAEE /* GoogleService-Info.plist */; };
 		B2A99DA920205CEB00EE8389 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DA820205CEB00EE8389 /* SignUpViewController.swift */; };
+		B2A99DAC2020D8C700EE8389 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		B227A62F2020464C00E5BAEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B227A6352020478700E5BAEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2A99DA820205CEB00EE8389 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		EB8823B5C9BFF4F02D378979 /* Pods-SmashFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmashFit.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmashFit/Pods-SmashFit.release.xcconfig"; sourceTree = "<group>"; };
 		F0E7F61958F9A8924F0A5FAE /* Pods_SmashFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SmashFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 			children = (
 				B227A6222020464C00E5BAEE /* WelcomeViewController.swift */,
 				B2A99DA820205CEB00EE8389 /* SignUpViewController.swift */,
+				B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				B227A6232020464C00E5BAEE /* WelcomeViewController.swift in Sources */,
 				B227A6212020464C00E5BAEE /* AppDelegate.swift in Sources */,
 				B2A99DA920205CEB00EE8389 /* SignUpViewController.swift in Sources */,
+				B2A99DAC2020D8C700EE8389 /* SettingsViewController.swift in Sources */,
 				B227A6292020464C00E5BAEE /* SmashFit.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

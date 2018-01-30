@@ -20,7 +20,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="YyB-OE-PBt">
             <objects>
-                <viewController id="IH0-03-v9j" customClass="WelcomeViewController" customModule="SmashFit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeView" id="IH0-03-v9j" customClass="WelcomeViewController" customModule="SmashFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lUL-yS-Fi8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -350,17 +350,58 @@ AMRAP 14
             </objects>
             <point key="canvasLocation" x="984.79999999999995" y="954.87256371814101"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="f3v-Uo-16f">
+            <objects>
+                <viewController id="esn-df-7lJ" customClass="SettingsViewController" customModule="SmashFit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EkX-Ju-SbT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHM-bZ-B46">
+                                <rect key="frame" x="149" y="496" width="76" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.73779147860000005" green="0.083976797759999999" blue="0.087495289739999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="esn-df-7lJ" eventType="touchUpInside" id="fZv-C6-UOm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(name)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qWS-rz-Qne">
+                                <rect key="frame" x="16" y="420" width="343" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11372549019607843" green="0.13725490196078433" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="h71-g6-KkM"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" id="4QS-n3-gmN"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="qWS-rz-Qne" id="HxU-AT-c2b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t8k-HA-NYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872.8" y="954.87256371814101"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="E2M-O5-LmU">
             <objects>
                 <tabBarController storyboardIdentifier="MainView" automaticallyAdjustsScrollViewInsets="NO" id="9UY-dy-E7B" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7Sz-jV-Z09">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="7Sz-jV-Z09">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="lVW-VK-o4b" kind="relationship" relationship="viewControllers" id="8Gc-at-ROj"/>
+                        <segue destination="esn-df-7lJ" kind="relationship" relationship="viewControllers" id="4Hc-OM-3Y8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTl-bP-2wm" userLabel="First Responder" sceneMemberID="firstResponder"/>
