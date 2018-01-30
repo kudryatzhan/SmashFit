@@ -77,6 +77,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="login:" destination="IH0-03-v9j" eventType="touchUpInside" id="N2m-94-Rbe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pY2-EE-Fcz">
                                 <rect key="frame" x="45" y="454" width="285" height="45"/>
@@ -141,6 +144,10 @@
                         <color key="backgroundColor" red="0.1137254902" green="0.13725490200000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="rVJ-mz-GMC"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="AYw-oL-PIS" id="wP4-3d-5La"/>
+                        <outlet property="passwordTextField" destination="Y7c-io-DXO" id="trc-l0-YOC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1PO-d5-nTa" sceneMemberID="firstResponder"/>
             </objects>
