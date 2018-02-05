@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import Firebase
+import FBSDKCoreKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +24,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Configure Firebase
         FirebaseApp.configure()
         
+        // Configure Facebok Login
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        // Initialize client ID of Google Sign In
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        var handled = false
+        
+        if url.absoluteString.contains("fb") {
+           
+            handled = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        } else {
+           
+            handled = GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+        }
+        
+        return handled
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

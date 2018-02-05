@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class SettingsViewController: UIViewController {
     
@@ -32,6 +33,18 @@ class SettingsViewController: UIViewController {
     @IBAction func logout(_ sender: UIButton) {
         
         do {
+            if let providerData = Auth.auth().currentUser?.providerData {
+                let userInfo = providerData[0]
+                
+                switch userInfo.providerID {
+                case "google.com":
+                    GIDSignIn.sharedInstance().signOut()
+                    
+                default:
+                    break
+                }
+            }
+            
             try Auth.auth().signOut()
         } catch {
             // AlertController telling about a Logout Error
