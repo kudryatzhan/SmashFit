@@ -23,10 +23,9 @@ class WelcomeViewController: UIViewController {
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     // MARK: - IBActions
@@ -83,6 +82,7 @@ class WelcomeViewController: UIViewController {
             // Dismiss keyboard
             self.view.endEditing(true)
             
+            
             // Present the main view
             if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
                 UIApplication.shared.keyWindow?.rootViewController = viewController
@@ -120,6 +120,18 @@ class WelcomeViewController: UIViewController {
                     return
                 }
                 
+//                // Save athlete user to Firebase
+//                if let user = user,
+//                    let name = user.displayName,
+//                    let email = user.email {
+//                    
+//                    let athlete = User(uid: user.uid, name: name, email: email, isAthlete: true)
+//                    UserController.shared.saveToFirebase(user: athlete)
+//                    print(athlete)
+//                } else {
+//                    print("User to save missing something.")
+//                }
+                
                 // Present the main view
                 if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
                     UIApplication.shared.keyWindow?.rootViewController = viewController
@@ -132,6 +144,9 @@ class WelcomeViewController: UIViewController {
     @IBAction func googleLogin(_ sender: UIButton) {
         GIDSignIn.sharedInstance().signIn()
     }
+    
+    // MARK: - Helper Methods
+
 }
 
 extension WelcomeViewController: GIDSignInUIDelegate, GIDSignInDelegate {
@@ -160,16 +175,24 @@ extension WelcomeViewController: GIDSignInUIDelegate, GIDSignInDelegate {
                 return
             }
             
-            // Present the main view
-            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
-                UIApplication.shared.keyWindow?.rootViewController = viewController
-                self.dismiss(animated: true, completion: nil)
+            // Save athlete user to Firebase
+            if let user = user,
+                let name = user.displayName,
+                let email = user.email {
+                
+                let athlete = User(uid: user.uid, name: name, email: email, isAthlete: true)
+                UserController.shared.saveToFirebase(user: athlete)
+                print(athlete)
+            } else {
+                print("User to save missing something.")
             }
+            
+//            // Present the main view
+//            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
+//                UIApplication.shared.keyWindow?.rootViewController = viewController
+//                self.dismiss(animated: true, completion: nil)
+//            }
         }
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        
     }
 }
 

@@ -166,7 +166,7 @@
         <!--Sign Up-->
         <scene sceneID="lA5-Sp-plW">
             <objects>
-                <viewController id="bnm-3N-fhB" customClass="SignUpViewController" customModule="SmashFit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bnm-3N-fhB" customClass="AthleteSignUpViewController" customModule="SmashFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZU8-4H-syB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -391,7 +391,7 @@ we will send you the link to reset the password</string>
         <!--WOD-->
         <scene sceneID="sJf-FJ-3DP">
             <objects>
-                <viewController id="lVW-VK-o4b" sceneMemberID="viewController">
+                <viewController id="lVW-VK-o4b" customClass="WorkoutViewController" customModule="SmashFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CVe-ib-Yg3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -414,28 +414,37 @@ we will send you the link to reset the password</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Gd-EX-odR">
-                                <rect key="frame" x="64" y="302" width="245" height="245"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GBW-Ue-exn">
+                                <rect key="frame" x="46" y="304" width="282" height="275"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Metcon                          Metcon (AMRAP - Reps)
+                                <color key="backgroundColor" red="0.11351270228624344" green="0.13844898343086243" blue="0.1866600513458252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Metcon                           Metcon (AMRAP - Reps)
 AMRAP 14
 20' overhead plate walking lunge 45/35
 10 plate burpees
 10 toes to bar
 30 double unders</string>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="lVW-VK-o4b" id="los-zF-m4a"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.11372549019607843" green="0.13725490196078433" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="vIO-39-Xga"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="WOD" id="tl5-bg-WnK"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="RPS-ee-9aS" id="NDm-zp-69C"/>
+                        <outlet property="weekDayLabel" destination="Wtw-ob-TnA" id="vix-Vb-6h3"/>
+                        <outlet property="wodTextField" destination="GBW-Ue-exn" id="bc1-cV-IbM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cfn-7k-uj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="964" y="1564"/>
+            <point key="canvasLocation" x="964" y="1563.8680659670167"/>
         </scene>
         <!--Settings-->
         <scene sceneID="f3v-Uo-16f">

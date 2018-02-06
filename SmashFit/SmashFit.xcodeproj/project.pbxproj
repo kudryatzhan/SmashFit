@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA43BEFCBAA0F353C6F9B97B /* Pods_SmashFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0E7F61958F9A8924F0A5FAE /* Pods_SmashFit.framework */; };
+		B21F8283202A24950006A9E2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21F8282202A24950006A9E2 /* User.swift */; };
 		B227A6212020464C00E5BAEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227A6202020464C00E5BAEE /* AppDelegate.swift */; };
 		B227A6232020464C00E5BAEE /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B227A6222020464C00E5BAEE /* WelcomeViewController.swift */; };
 		B227A6262020464C00E5BAEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B227A6242020464C00E5BAEE /* Main.storyboard */; };
@@ -15,13 +16,16 @@
 		B227A62B2020464C00E5BAEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B227A62A2020464C00E5BAEE /* Assets.xcassets */; };
 		B227A62E2020464C00E5BAEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B227A62C2020464C00E5BAEE /* LaunchScreen.storyboard */; };
 		B227A6362020478700E5BAEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B227A6352020478700E5BAEE /* GoogleService-Info.plist */; };
-		B2A99DA920205CEB00EE8389 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DA820205CEB00EE8389 /* SignUpViewController.swift */; };
+		B267C6312029186700193533 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267C6302029186700193533 /* WorkoutViewController.swift */; };
+		B27C6A5B202A39DD00A5ADBB /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C6A5A202A39DD00A5ADBB /* UserController.swift */; };
+		B2A99DA920205CEB00EE8389 /* AthleteSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DA820205CEB00EE8389 /* AthleteSignUpViewController.swift */; };
 		B2A99DAC2020D8C700EE8389 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */; };
 		B2A99DAE2020E50500EE8389 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DAD2020E50500EE8389 /* ResetPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		56D3CC8EAC05D522C009A69C /* Pods-SmashFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmashFit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmashFit/Pods-SmashFit.debug.xcconfig"; sourceTree = "<group>"; };
+		B21F8282202A24950006A9E2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B227A61D2020464C00E5BAEE /* SmashFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmashFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B227A6202020464C00E5BAEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B227A6222020464C00E5BAEE /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -31,7 +35,9 @@
 		B227A62D2020464C00E5BAEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B227A62F2020464C00E5BAEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B227A6352020478700E5BAEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		B2A99DA820205CEB00EE8389 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		B267C6302029186700193533 /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
+		B27C6A5A202A39DD00A5ADBB /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		B2A99DA820205CEB00EE8389 /* AthleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteSignUpViewController.swift; sourceTree = "<group>"; };
 		B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B2A99DAD2020E50500EE8389 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		EB8823B5C9BFF4F02D378979 /* Pods-SmashFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmashFit.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmashFit/Pods-SmashFit.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +73,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B21F8284202A24980006A9E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B21F8282202A24950006A9E2 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B227A6142020464C00E5BAEE = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				B227A6202020464C00E5BAEE /* AppDelegate.swift */,
+				B21F8284202A24980006A9E2 /* Model */,
+				B27C6A57202A39B000A5ADBB /* Model Controllers */,
 				B2A99DAA20205CF100EE8389 /* View Controllers */,
 				B227A6242020464C00E5BAEE /* Main.storyboard */,
 				B227A62A2020464C00E5BAEE /* Assets.xcassets */,
@@ -100,13 +116,22 @@
 			path = SmashFit;
 			sourceTree = "<group>";
 		};
+		B27C6A57202A39B000A5ADBB /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B27C6A5A202A39DD00A5ADBB /* UserController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
 		B2A99DAA20205CF100EE8389 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				B227A6222020464C00E5BAEE /* WelcomeViewController.swift */,
-				B2A99DA820205CEB00EE8389 /* SignUpViewController.swift */,
+				B2A99DA820205CEB00EE8389 /* AthleteSignUpViewController.swift */,
 				B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */,
 				B2A99DAD2020E50500EE8389 /* ResetPasswordViewController.swift */,
+				B267C6302029186700193533 /* WorkoutViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -194,7 +219,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -214,6 +239,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -224,6 +250,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,9 +283,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B27C6A5B202A39DD00A5ADBB /* UserController.swift in Sources */,
 				B227A6232020464C00E5BAEE /* WelcomeViewController.swift in Sources */,
 				B227A6212020464C00E5BAEE /* AppDelegate.swift in Sources */,
-				B2A99DA920205CEB00EE8389 /* SignUpViewController.swift in Sources */,
+				B267C6312029186700193533 /* WorkoutViewController.swift in Sources */,
+				B2A99DA920205CEB00EE8389 /* AthleteSignUpViewController.swift in Sources */,
+				B21F8283202A24950006A9E2 /* User.swift in Sources */,
 				B2A99DAE2020E50500EE8389 /* ResetPasswordViewController.swift in Sources */,
 				B2A99DAC2020D8C700EE8389 /* SettingsViewController.swift in Sources */,
 				B227A6292020464C00E5BAEE /* SmashFit.xcdatamodeld in Sources */,

@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Change statusBarStyle
+        UIApplication.shared.statusBarStyle = .lightContent
         
         // Configure Firebase
         FirebaseApp.configure()
@@ -29,6 +31,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Initialize client ID of Google Sign In
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        
+        // Check if user is signed in
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let welcomeVC = storyboard.instantiateViewController(withIdentifier: "WelcomeView")
+            let workoutVC = storyboard.instantiateViewController(withIdentifier: "MainView")
+            
+            if let user = user, user.isEmailVerified {
+                // User is signed in
+                UIApplication.shared.keyWindow?.rootViewController = workoutVC
+            } else {
+                // No user is signed in
+                self.window?.rootViewController = welcomeVC
+            }
+        }
         
         return true
     }
