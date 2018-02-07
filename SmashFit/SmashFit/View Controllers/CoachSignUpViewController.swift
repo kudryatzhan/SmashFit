@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import DropDown
 
 class CoachSignUpViewController: UIViewController {
     
@@ -15,12 +16,18 @@ class CoachSignUpViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var gymChoiceButton: UIButton!
     
-
+    // MARK: - Properties
+    let dropDown = DropDown()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        // Set up drop down menu
+        dropDown.anchorView = gymChoiceButton
+        dropDown.dataSource = ["Arlan", "Invictus", "Crossfit Astana"]
     }
     
     // MARK: - IBActions

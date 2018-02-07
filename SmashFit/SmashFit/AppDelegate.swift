@@ -11,12 +11,12 @@ import CoreData
 import Firebase
 import FBSDKCoreKit
 import GoogleSignIn
+import DropDown
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Configure Facebok Login
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        // Configure DropDownMenu
+        DropDown.startListeningToKeyboard()
         
         // Initialize client ID of Google Sign In
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID

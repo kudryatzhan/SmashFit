@@ -5,6 +5,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - DropDown (2.0.2)
   - FBSDKCoreKit (4.29.0):
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.29.0):
@@ -68,6 +69,7 @@ PODS:
 
 DEPENDENCIES:
   - Bolts
+  - DropDown
   - FBSDKCoreKit
   - FBSDKLoginKit
   - Firebase
@@ -78,6 +80,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  DropDown: 75562633a203f57a917021b4edb96c76f293b0ec
   FBSDKCoreKit: 6f139173dc63a1deaff4430a55f2fe5bb222d2af
   FBSDKLoginKit: 56a057ca6822535ea0faa25f57a7c41edb697fd4
   Firebase: 710decbbc6d9d48530e9a5dba3209740c3532e05
@@ -93,6 +96,6 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: 369acfb37b0b378876c649da6943d55661541e81
+PODFILE CHECKSUM: 57749113db2ad76c95842935af38473738b06ce0
 
 COCOAPODS: 1.4.0

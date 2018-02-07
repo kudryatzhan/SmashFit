@@ -9,8 +9,7 @@
 import UIKit
 import Firebase
 
-class WorkoutViewController: UIViewController, UITextViewDelegate {
-    
+class WorkoutViewController: UIViewController, UITextViewDelegate, WodDescriptionTextViewDelegate {
     
     // MARK: - IBOutlets
     @IBOutlet weak var weekDayLabel: UILabel!
@@ -28,10 +27,9 @@ class WorkoutViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // Check if user is athlete or a coach
         usersReference.child(Auth.auth().currentUser!.uid).observe(.value) { (snapshot) in
-            
+
             if let values = snapshot.value as? [String: Any] {
                 self.isAthleteLoggedIn = values["isAthlete"] as! Bool
                 self.wodTextView.isEditable =  self.isAthleteLoggedIn ? false : true
@@ -45,7 +43,6 @@ class WorkoutViewController: UIViewController, UITextViewDelegate {
             let values = snapshot.value as! [String: Any]
             let workout = values["workout"] as! String
             self.wodTextView.text = workout
-            
         }
     }
     
@@ -63,6 +60,11 @@ class WorkoutViewController: UIViewController, UITextViewDelegate {
         let values: [String: Any] = ["type": "metcon",
                                      "workout": text]
         todaysWorkoutRef.setValue(values)
+    }
+    
+    // MARK: - WodDescriptionTextViewDelegate
+    func wodTextViewDidEndEditig(with text: String) {
+        wodTextView.text = text
     }
     
     // MARK: - Helper methods
@@ -96,5 +98,12 @@ class WorkoutViewController: UIViewController, UITextViewDelegate {
         weekDayLabel.text = dayOfTheWeekAsString
         dateLabel.text = dateFormatter.string(from: date)
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAddWorkoutVC" {
+            guard let destionation = segue.destination as? AddWorkoutPopUpViewController else { return }
+            destionation.delegate = self
+        }
     }
 }
