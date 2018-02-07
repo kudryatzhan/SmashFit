@@ -16,6 +16,7 @@ class WorkoutViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var weekDayLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var wodTextView: UITextView!
+    @IBOutlet weak var addWorkoutButton: UIButton!
     
     // MARK: - Properties
     let workoutReference = Database.database().reference(withPath: "workouts")
@@ -34,6 +35,7 @@ class WorkoutViewController: UIViewController, UITextViewDelegate {
             if let values = snapshot.value as? [String: Any] {
                 self.isAthleteLoggedIn = values["isAthlete"] as! Bool
                 self.wodTextView.isEditable =  self.isAthleteLoggedIn ? false : true
+                self.addWorkoutButton.isHidden = self.isAthleteLoggedIn ? true : false
             }
         }
         
