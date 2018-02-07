@@ -1,33 +1,29 @@
 //
-//  SignUpViewController.swift
+//  CoachSignUpViewController.swift
 //  SmashFit
 //
-//  Created by Kudryatzhan Arziyev on 1/30/18.
+//  Created by Kudryatzhan Arziyev on 2/6/18.
 //  Copyright © 2018 Kudryatzhan Arziyev. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class AthleteSignUpViewController: UIViewController {
+class CoachSignUpViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
-    // MARK: - App Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
     }
     
     // MARK: - IBActions
-    
-    // Sign up implementation
     @IBAction func registerAccount(_ sender: UIButton) {
         
         // Validate the input
@@ -89,12 +85,14 @@ class AthleteSignUpViewController: UIViewController {
             // Save athlete user to Firebase
             if let user = user {
                 
-                let athlete = User(uid: user.uid, name: name, email: email, isAthlete: true)
+                let athlete = User(uid: user.uid, name: name, email: email, isAthlete: false)
                 UserController.shared.saveToFirebase(user: athlete)
                 print(athlete)
             } else {
                 print("User to save missing something.")
             }
         }
+        
     }
+    
 }

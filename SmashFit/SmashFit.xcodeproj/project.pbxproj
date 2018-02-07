@@ -18,6 +18,8 @@
 		B227A6362020478700E5BAEE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B227A6352020478700E5BAEE /* GoogleService-Info.plist */; };
 		B267C6312029186700193533 /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B267C6302029186700193533 /* WorkoutViewController.swift */; };
 		B27C6A5B202A39DD00A5ADBB /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C6A5A202A39DD00A5ADBB /* UserController.swift */; };
+		B27C6A5F202A7E5500A5ADBB /* CoachSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C6A5E202A7E5500A5ADBB /* CoachSignUpViewController.swift */; };
+		B27C6A61202A954500A5ADBB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C6A60202A954500A5ADBB /* Helpers.swift */; };
 		B2A99DA920205CEB00EE8389 /* AthleteSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DA820205CEB00EE8389 /* AthleteSignUpViewController.swift */; };
 		B2A99DAC2020D8C700EE8389 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */; };
 		B2A99DAE2020E50500EE8389 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DAD2020E50500EE8389 /* ResetPasswordViewController.swift */; };
@@ -37,6 +39,8 @@
 		B227A6352020478700E5BAEE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B267C6302029186700193533 /* WorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		B27C6A5A202A39DD00A5ADBB /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		B27C6A5E202A7E5500A5ADBB /* CoachSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachSignUpViewController.swift; sourceTree = "<group>"; };
+		B27C6A60202A954500A5ADBB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		B2A99DA820205CEB00EE8389 /* AthleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteSignUpViewController.swift; sourceTree = "<group>"; };
 		B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B2A99DAD2020E50500EE8389 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				B227A62F2020464C00E5BAEE /* Info.plist */,
 				B227A6272020464C00E5BAEE /* SmashFit.xcdatamodeld */,
 				B227A6352020478700E5BAEE /* GoogleService-Info.plist */,
+				B27C6A60202A954500A5ADBB /* Helpers.swift */,
 			);
 			path = SmashFit;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			children = (
 				B227A6222020464C00E5BAEE /* WelcomeViewController.swift */,
 				B2A99DA820205CEB00EE8389 /* AthleteSignUpViewController.swift */,
+				B27C6A5E202A7E5500A5ADBB /* CoachSignUpViewController.swift */,
 				B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */,
 				B2A99DAD2020E50500EE8389 /* ResetPasswordViewController.swift */,
 				B267C6302029186700193533 /* WorkoutViewController.swift */,
@@ -286,6 +292,8 @@
 				B27C6A5B202A39DD00A5ADBB /* UserController.swift in Sources */,
 				B227A6232020464C00E5BAEE /* WelcomeViewController.swift in Sources */,
 				B227A6212020464C00E5BAEE /* AppDelegate.swift in Sources */,
+				B27C6A5F202A7E5500A5ADBB /* CoachSignUpViewController.swift in Sources */,
+				B27C6A61202A954500A5ADBB /* Helpers.swift in Sources */,
 				B267C6312029186700193533 /* WorkoutViewController.swift in Sources */,
 				B2A99DA920205CEB00EE8389 /* AthleteSignUpViewController.swift in Sources */,
 				B21F8283202A24950006A9E2 /* User.swift in Sources */,

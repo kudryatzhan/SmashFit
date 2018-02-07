@@ -120,17 +120,17 @@ class WelcomeViewController: UIViewController {
                     return
                 }
                 
-//                // Save athlete user to Firebase
-//                if let user = user,
-//                    let name = user.displayName,
-//                    let email = user.email {
-//                    
-//                    let athlete = User(uid: user.uid, name: name, email: email, isAthlete: true)
-//                    UserController.shared.saveToFirebase(user: athlete)
-//                    print(athlete)
-//                } else {
-//                    print("User to save missing something.")
-//                }
+                // Save athlete user to Firebase
+                if let user = user,
+                    let name = user.displayName,
+                    let email = user.email {
+                    
+                    let athlete = User(uid: user.uid, name: name, email: email, isAthlete: true)
+                    UserController.shared.saveToFirebase(user: athlete)
+                    print(athlete)
+                } else {
+                    print("User to save missing something.")
+                }
                 
                 // Present the main view
                 if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
@@ -186,12 +186,12 @@ extension WelcomeViewController: GIDSignInUIDelegate, GIDSignInDelegate {
             } else {
                 print("User to save missing something.")
             }
-            
-//            // Present the main view
-//            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
-//                UIApplication.shared.keyWindow?.rootViewController = viewController
-//                self.dismiss(animated: true, completion: nil)
-//            }
+
+            // Present the main view
+            if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "MainView") {
+                UIApplication.shared.keyWindow?.rootViewController = viewController
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
 }
