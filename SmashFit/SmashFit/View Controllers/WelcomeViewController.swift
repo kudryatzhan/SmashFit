@@ -125,7 +125,7 @@ class WelcomeViewController: UIViewController {
                     let name = user.displayName,
                     let email = user.email {
                     
-                    let athlete = User(uid: user.uid, name: name, email: email, isAthlete: true)
+                    let athlete = User(uid: user.uid, name: name, email: email, gymName: "gymName here", isAthlete: true)
                     UserController.shared.saveToFirebase(user: athlete)
                     print(athlete)
                 } else {
@@ -180,7 +180,7 @@ extension WelcomeViewController: GIDSignInUIDelegate, GIDSignInDelegate {
                 let name = user.displayName,
                 let email = user.email {
                 
-                let athlete = User(uid: user.uid, name: name, email: email, isAthlete: true)
+                let athlete = User(uid: user.uid, name: name, email: email, gymName: "gymName here", isAthlete: true)
                 UserController.shared.saveToFirebase(user: athlete)
                 print(athlete)
             } else {

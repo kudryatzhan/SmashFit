@@ -151,10 +151,10 @@
 				B227A6222020464C00E5BAEE /* WelcomeViewController.swift */,
 				B2A99DA820205CEB00EE8389 /* AthleteSignUpViewController.swift */,
 				B27C6A5E202A7E5500A5ADBB /* CoachSignUpViewController.swift */,
-				B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */,
 				B2A99DAD2020E50500EE8389 /* ResetPasswordViewController.swift */,
 				B267C6302029186700193533 /* WorkoutViewController.swift */,
 				B27C6A62202AABCF00A5ADBB /* AddWorkoutPopUpViewController.swift */,
+				B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";

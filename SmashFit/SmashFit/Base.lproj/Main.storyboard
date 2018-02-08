@@ -409,7 +409,7 @@ we will send you the link to reset the password</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Jan/30/2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RPS-ee-9aS">
-                                <rect key="frame" x="64" y="164" width="247" height="33"/>
+                                <rect key="frame" x="65" y="141" width="247" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -445,10 +445,17 @@ we will send you the link to reset the password</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tuesday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wtw-ob-TnA">
-                                <rect key="frame" x="27" y="90" width="321" height="66"/>
+                                <rect key="frame" x="27" y="67" width="321" height="66"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="48"/>
                                 <color key="textColor" red="0.73779147863388062" green="0.083976797759532928" blue="0.087495289742946625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Obb-HM-C7R">
+                                <rect key="frame" x="65" y="182" width="247" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -461,6 +468,7 @@ we will send you the link to reset the password</string>
                         <outlet property="dateLabel" destination="RPS-ee-9aS" id="NDm-zp-69C"/>
                         <outlet property="weekDayLabel" destination="Wtw-ob-TnA" id="vix-Vb-6h3"/>
                         <outlet property="wodTextView" destination="GBW-Ue-exn" id="bc1-cV-IbM"/>
+                        <outlet property="workoutTypeLabel" destination="Obb-HM-C7R" id="ORm-B6-1Aq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cfn-7k-uj1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -573,6 +581,7 @@ we will send you the link to reset the password</string>
                     </view>
                     <connections>
                         <outlet property="popUpView" destination="1GN-xx-z4f" id="lod-nw-FSk"/>
+                        <outlet property="saveButton" destination="Rmj-Dg-frN" id="OAU-Cp-Rk2"/>
                         <outlet property="typeButton" destination="wzl-SK-mEn" id="Z2m-Vb-02N"/>
                         <outlet property="wodDescriptionTextView" destination="NZN-fW-RTS" id="FEP-jZ-IKj"/>
                     </connections>
@@ -771,14 +780,13 @@ we will send you the link to reset the password</string>
                                         <rect key="frame" x="252" y="12" width="22" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x7m-CO-4dm">
-                                        <rect key="frame" x="48" y="8" width="195" height="29"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gym name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oW0-aY-mWv">
+                                        <rect key="frame" x="48" y="7" width="201" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="Choose your gym from the list">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
@@ -800,7 +808,7 @@ we will send you the link to reset the password</string>
                     </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="Dsu-s2-6CA" id="3No-Ao-1hQ"/>
-                        <outlet property="gymChoiceButton" destination="x7m-CO-4dm" id="Uba-Zf-QSu"/>
+                        <outlet property="gymNameTextField" destination="oW0-aY-mWv" id="aAB-CZ-6NY"/>
                         <outlet property="nameTextField" destination="g5W-YP-sZL" id="XKo-1v-XQV"/>
                         <outlet property="passwordTextField" destination="9AS-h6-i8E" id="ViI-Tk-a2v"/>
                         <outlet property="searchDisplayController" destination="Mo8-AI-0kF" id="c4P-75-YZx"/>

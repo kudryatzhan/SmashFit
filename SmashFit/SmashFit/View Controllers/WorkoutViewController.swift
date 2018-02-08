@@ -16,12 +16,13 @@ class WorkoutViewController: UIViewController, UITextViewDelegate, WodDescriptio
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var wodTextView: UITextView!
     @IBOutlet weak var addWorkoutButton: UIButton!
+    @IBOutlet weak var workoutTypeLabel: UILabel!
     
     // MARK: - Properties
     let workoutReference = Database.database().reference(withPath: "workouts")
     let usersReference = Database.database().reference(withPath: "users")
     var isAthleteLoggedIn = true // Athlete or Coach
-
+    
     
     // MARK: - App LifeCycle
     override func viewDidLoad() {
@@ -29,27 +30,54 @@ class WorkoutViewController: UIViewController, UITextViewDelegate, WodDescriptio
         
         // Check if user is athlete or a coach
         usersReference.child(Auth.auth().currentUser!.uid).observe(.value) { (snapshot) in
-
-            if let values = snapshot.value as? [String: Any] {
-                self.isAthleteLoggedIn = values["isAthlete"] as! Bool
+            if let values = snapshot.value as? [String: Any],
+                let isAthlete = values["isAthlete"] as? Bool {
+                
+                self.isAthleteLoggedIn = isAthlete
                 self.wodTextView.isEditable =  self.isAthleteLoggedIn ? false : true
                 self.addWorkoutButton.isHidden = self.isAthleteLoggedIn ? true : false
             }
         }
-        
-        //  Get today's workout
-        workoutReference.child("060218").observe(.value) { (snapshot) in
-            
-            let values = snapshot.value as! [String: Any]
-            let workout = values["workout"] as! String
-            self.wodTextView.text = workout
-        }
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-          setTodaysDate()
+        setTodaysDate()
+        
+        
+        usersReference.child(Auth.auth().currentUser!.uid).observe(.value) { (snapshot) in
+            
+            if let values = snapshot.value as? [String: Any],
+                let email = values["email"] as? String,
+                let gym = values["gym"] as? String,
+                let isAthlete = values["isAthlete"] as? Bool,
+                let name = values["name"] as? String,
+                let uid = values["uid"] as? String {
+                
+                // set currentLoggedInUser
+                currentLoggedInUser = User(uid: uid, name: name, email: email, gymName: gym, isAthlete: isAthlete)
+                
+                //  set today's workout
+                guard let currentUser = currentLoggedInUser else { print("currentLoggedInUser user is nil"); return }
+                let allGymsRef = Database.database().reference(withPath: "gyms")
+                let gymRef = allGymsRef.child(currentUser.gymName)
+                let allWorkoutsRef = gymRef.child("workouts")
+            
+                allWorkoutsRef.child(dateIdentifierFormatter.string(from: Date())).observe(.value) { (snapshot) in
+                    if let values = snapshot.value as? [String: Any],
+                        let workout = values["description"] as? String,
+                        let type = values["type"] as? String {
+                        
+                        self.wodTextView.text = workout
+                        self.workoutTypeLabel.text = type
+                    }
+                }
+            }
+        }
+        
+        
     }
     
     // MARK: - UITextViewDelegate
@@ -97,7 +125,7 @@ class WorkoutViewController: UIViewController, UITextViewDelegate, WodDescriptio
         
         weekDayLabel.text = dayOfTheWeekAsString
         dateLabel.text = dateFormatter.string(from: date)
-
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

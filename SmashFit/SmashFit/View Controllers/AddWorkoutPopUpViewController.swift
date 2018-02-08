@@ -19,6 +19,7 @@ class AddWorkoutPopUpViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var typeButton: UIButton!
     @IBOutlet weak var wodDescriptionTextView: UITextView!
+    @IBOutlet weak var saveButton: UIButton!
     
     // MARK: - Properties
     let dropDown = DropDown()
@@ -26,8 +27,17 @@ class AddWorkoutPopUpViewController: UIViewController, UITextViewDelegate {
     
     // MARK: - IBActions
     @IBAction func saveWOD(_ sender: UIButton) {
-        delegate?.wodTextViewDidEndEditig(with: wodDescriptionTextView.text)
-        dismiss(animated: true, completion: nil)
+        if let workoutText = wodDescriptionTextView.text, !workoutText.isEmpty,
+            let workoutType = typeButton.currentTitle, workoutType != "Choose WOD type..." {
+            
+            delegate?.wodTextViewDidEndEditig(with: workoutText)
+            
+            // Save workout to database
+            let workout = Workout(type: workoutType, description: workoutText, dateAdded: Date(), dateAddedAsString: dateIdentifierFormatter.string(from: Date()))
+            WorkoutController.shared.saveToFirebase(workout: workout)
+            
+            dismiss(animated: true, completion: nil)
+        }
     }
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
@@ -38,6 +48,7 @@ class AddWorkoutPopUpViewController: UIViewController, UITextViewDelegate {
         dropDown.show()
     }
     
+    // MARK: - Lifecycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
     

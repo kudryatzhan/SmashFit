@@ -13,13 +13,19 @@ class WorkoutController {
     
     static let shared = WorkoutController()
     
-    let allWorkoutsRef = Database.database().reference(withPath: "workouts")
-    
     // save workout to firebase
     func saveToFirebase(workout: Workout) {
-        let workoutRef = allWorkoutsRef.child(workout.dateAddedAsString)
+        guard let currentUser = currentLoggedInUser else { return }
+        let allGymsRef = Database.database().reference(withPath: "gyms")
+        let gymRef = allGymsRef.child(currentUser.gymName)
+        let allWorkoutsRef = gymRef.child("workouts")
+        let workoutRef = allWorkoutsRef.child(dateIdentifierFormatter.string(from: Date()))
         let values: [String: Any] = ["type": workout.type,
                                      "description": workout.description,
-                                     "dateAdded": workout.dateAdded]
+                                     "dateAdded": workout.dateAddedAsString]
+        workoutRef.setValue(values)
+    
     }
+    
+    
 }

@@ -89,7 +89,8 @@ class AthleteSignUpViewController: UIViewController {
             // Save athlete user to Firebase
             if let user = user {
                 
-                let athlete = User(uid: user.uid, name: name, email: email, isAthlete: true)
+                //FIXME: - Fix it 
+                let athlete = User(uid: user.uid, name: name, email: email, gymName: "gymName here", isAthlete: true)
                 UserController.shared.saveToFirebase(user: athlete)
                 print(athlete)
             } else {
