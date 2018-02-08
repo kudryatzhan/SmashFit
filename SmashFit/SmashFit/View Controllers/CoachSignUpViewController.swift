@@ -15,11 +15,15 @@ class CoachSignUpViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var gymNameTextField: UITextField!
     
-
+    
+    // MARK: - Properties
+    
+    
+    // MARK: - Lifecycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
-
 
     }
     
@@ -30,7 +34,8 @@ class CoachSignUpViewController: UIViewController {
         guard
             let name = nameTextField.text, !name.isEmpty,
             let email = emailTextField.text, !email.isEmpty,
-            let password = passwordTextField.text, !password.isEmpty else {
+            let password = passwordTextField.text, !password.isEmpty,
+            let gymName = gymNameTextField.text, !gymName.isEmpty else {
                 
                 // Create an alert
                 let alertController = UIAlertController(title: "Registration Error", message: "Please make sure you provide your name, email address and password to complete the registration.", preferredStyle: .alert)
@@ -85,9 +90,9 @@ class CoachSignUpViewController: UIViewController {
             // Save athlete user to Firebase
             if let user = user {
                 
-                let athlete = User(uid: user.uid, name: name, email: email, isAthlete: false)
-                UserController.shared.saveToFirebase(user: athlete)
-                print(athlete)
+                let coach = User(uid: user.uid, name: name, email: email, gymName: gymName, isAthlete: false)
+                UserController.shared.saveToFirebase(user: coach)
+                print(coach)
             } else {
                 print("User to save missing something.")
             }

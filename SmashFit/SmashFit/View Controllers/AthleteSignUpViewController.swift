@@ -15,6 +15,7 @@ class AthleteSignUpViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var gymNameTextField: UITextField!
     
     
     // MARK: - App Lifecycle
@@ -34,7 +35,8 @@ class AthleteSignUpViewController: UIViewController {
         guard
             let name = nameTextField.text, !name.isEmpty,
             let email = emailTextField.text, !email.isEmpty,
-            let password = passwordTextField.text, !password.isEmpty else {
+            let password = passwordTextField.text, !password.isEmpty,
+            let gymName = gymNameTextField.text, !gymName.isEmpty else {
                 
                 // Create an alert
                 let alertController = UIAlertController(title: "Registration Error", message: "Please make sure you provide your name, email address and password to complete the registration.", preferredStyle: .alert)
@@ -89,7 +91,8 @@ class AthleteSignUpViewController: UIViewController {
             // Save athlete user to Firebase
             if let user = user {
                 
-                let athlete = User(uid: user.uid, name: name, email: email, isAthlete: true)
+                //FIXME: - Fix it 
+                let athlete = User(uid: user.uid, name: name, email: email, gymName: gymName, isAthlete: true)
                 UserController.shared.saveToFirebase(user: athlete)
                 print(athlete)
             } else {

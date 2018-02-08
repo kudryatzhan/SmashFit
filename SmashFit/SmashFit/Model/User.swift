@@ -13,6 +13,7 @@ struct User {
     let uid: String
     let name: String
     let email: String
+    let gymName: String
     let isAthlete: Bool
     
 }

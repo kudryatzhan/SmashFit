@@ -7,9 +7,20 @@
 //
 
 import Foundation
+import Firebase
 
 let dateFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateFormat = "MMM dd, yyyy"
     return formatter
 }()
+
+//  workout date identifier for Firebase
+let dateIdentifierFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "MMMddyyyy"
+    return formatter
+}()
+
+// currentLoggedInUser
+var currentLoggedInUser: User?

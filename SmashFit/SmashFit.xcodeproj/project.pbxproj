@@ -20,6 +20,9 @@
 		B27C6A5B202A39DD00A5ADBB /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C6A5A202A39DD00A5ADBB /* UserController.swift */; };
 		B27C6A5F202A7E5500A5ADBB /* CoachSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C6A5E202A7E5500A5ADBB /* CoachSignUpViewController.swift */; };
 		B27C6A61202A954500A5ADBB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C6A60202A954500A5ADBB /* Helpers.swift */; };
+		B27C6A63202AABCF00A5ADBB /* AddWorkoutPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C6A62202AABCF00A5ADBB /* AddWorkoutPopUpViewController.swift */; };
+		B27C6A6A202B60DC00A5ADBB /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C6A69202B60DC00A5ADBB /* Workout.swift */; };
+		B27C6A6C202B615500A5ADBB /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C6A6B202B615500A5ADBB /* WorkoutController.swift */; };
 		B2A99DA920205CEB00EE8389 /* AthleteSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DA820205CEB00EE8389 /* AthleteSignUpViewController.swift */; };
 		B2A99DAC2020D8C700EE8389 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */; };
 		B2A99DAE2020E50500EE8389 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DAD2020E50500EE8389 /* ResetPasswordViewController.swift */; };
@@ -41,6 +44,9 @@
 		B27C6A5A202A39DD00A5ADBB /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		B27C6A5E202A7E5500A5ADBB /* CoachSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachSignUpViewController.swift; sourceTree = "<group>"; };
 		B27C6A60202A954500A5ADBB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		B27C6A62202AABCF00A5ADBB /* AddWorkoutPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutPopUpViewController.swift; sourceTree = "<group>"; };
+		B27C6A69202B60DC00A5ADBB /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		B27C6A6B202B615500A5ADBB /* WorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
 		B2A99DA820205CEB00EE8389 /* AthleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteSignUpViewController.swift; sourceTree = "<group>"; };
 		B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B2A99DAD2020E50500EE8389 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				B21F8282202A24950006A9E2 /* User.swift */,
+				B27C6A69202B60DC00A5ADBB /* Workout.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -109,6 +116,7 @@
 				B227A6202020464C00E5BAEE /* AppDelegate.swift */,
 				B21F8284202A24980006A9E2 /* Model */,
 				B27C6A57202A39B000A5ADBB /* Model Controllers */,
+				B27C6A64202AD8E700A5ADBB /* Views */,
 				B2A99DAA20205CF100EE8389 /* View Controllers */,
 				B227A6242020464C00E5BAEE /* Main.storyboard */,
 				B227A62A2020464C00E5BAEE /* Assets.xcassets */,
@@ -125,8 +133,16 @@
 			isa = PBXGroup;
 			children = (
 				B27C6A5A202A39DD00A5ADBB /* UserController.swift */,
+				B27C6A6B202B615500A5ADBB /* WorkoutController.swift */,
 			);
 			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		B27C6A64202AD8E700A5ADBB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		B2A99DAA20205CF100EE8389 /* View Controllers */ = {
@@ -135,9 +151,10 @@
 				B227A6222020464C00E5BAEE /* WelcomeViewController.swift */,
 				B2A99DA820205CEB00EE8389 /* AthleteSignUpViewController.swift */,
 				B27C6A5E202A7E5500A5ADBB /* CoachSignUpViewController.swift */,
-				B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */,
 				B2A99DAD2020E50500EE8389 /* ResetPasswordViewController.swift */,
 				B267C6302029186700193533 /* WorkoutViewController.swift */,
+				B27C6A62202AABCF00A5ADBB /* AddWorkoutPopUpViewController.swift */,
+				B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -240,6 +257,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SmashFit/Pods-SmashFit-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
@@ -251,6 +269,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
@@ -292,12 +311,15 @@
 				B27C6A5B202A39DD00A5ADBB /* UserController.swift in Sources */,
 				B227A6232020464C00E5BAEE /* WelcomeViewController.swift in Sources */,
 				B227A6212020464C00E5BAEE /* AppDelegate.swift in Sources */,
+				B27C6A6A202B60DC00A5ADBB /* Workout.swift in Sources */,
 				B27C6A5F202A7E5500A5ADBB /* CoachSignUpViewController.swift in Sources */,
 				B27C6A61202A954500A5ADBB /* Helpers.swift in Sources */,
+				B27C6A63202AABCF00A5ADBB /* AddWorkoutPopUpViewController.swift in Sources */,
 				B267C6312029186700193533 /* WorkoutViewController.swift in Sources */,
 				B2A99DA920205CEB00EE8389 /* AthleteSignUpViewController.swift in Sources */,
 				B21F8283202A24950006A9E2 /* User.swift in Sources */,
 				B2A99DAE2020E50500EE8389 /* ResetPasswordViewController.swift in Sources */,
+				B27C6A6C202B615500A5ADBB /* WorkoutController.swift in Sources */,
 				B2A99DAC2020D8C700EE8389 /* SettingsViewController.swift in Sources */,
 				B227A6292020464C00E5BAEE /* SmashFit.xcdatamodeld in Sources */,
 			);

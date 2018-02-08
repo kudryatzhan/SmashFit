@@ -19,4 +19,7 @@ target 'SmashFit' do
   # Pods for Google Sign In
   pod 'GoogleSignIn'
 
+  # Pod for Drop Down Menu
+  pod 'DropDown'
+
 end
