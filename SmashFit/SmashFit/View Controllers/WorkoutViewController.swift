@@ -46,7 +46,6 @@ class WorkoutViewController: UIViewController, UITextViewDelegate, WodDescriptio
         
         setTodaysDate()
         
-        
         usersReference.child(Auth.auth().currentUser!.uid).observe(.value) { (snapshot) in
             
             if let values = snapshot.value as? [String: Any],

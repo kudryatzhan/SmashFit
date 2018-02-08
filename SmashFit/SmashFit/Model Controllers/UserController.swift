@@ -24,12 +24,19 @@ class UserController {
                                      "isAthlete": user.isAthlete]
         userRef.setValue(values)
         
-        if user.isAthlete == false {
-            // save gyms to firebase
+        // Check if gym is already in the list to avoid recreating it
+        if !user.isAthlete {
             let allGymsRef = Database.database().reference(withPath: "gyms")
-            let gymRef = allGymsRef.child(user.gymName)
-            let values: [String: Any] = ["name": user.gymName]
-            gymRef.setValue(values)
+            allGymsRef.observeSingleEvent(of: .value) { (snapshot) in
+                if snapshot.hasChild(user.gymName) {
+                    print("already exists")
+                } else {
+                    // save gym to firebase
+                    let gymRef = allGymsRef.child(user.gymName)
+                    let values: [String: Any] = ["name": user.gymName]
+                    gymRef.setValue(values)
+                }
+            }
         }
     }
 }

@@ -208,7 +208,7 @@
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iDm-rJ-jX3">
-                                <rect key="frame" x="45" y="264" width="285" height="45"/>
+                                <rect key="frame" x="45" y="197" width="285" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="users" translatesAutoresizingMaskIntoConstraints="NO" id="0Ga-VB-9X5">
@@ -231,7 +231,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tHT-xz-Z7q">
-                                <rect key="frame" x="45" y="311" width="285" height="45"/>
+                                <rect key="frame" x="45" y="244" width="285" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mail" translatesAutoresizingMaskIntoConstraints="NO" id="ABv-Bf-sbC">
@@ -254,7 +254,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VQp-J0-ec7">
-                                <rect key="frame" x="45" y="358" width="285" height="45"/>
+                                <rect key="frame" x="45" y="291" width="285" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="xQE-AV-F3V">
@@ -276,13 +276,33 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SmashFit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uz5-TM-9ab">
-                                <rect key="frame" x="55" y="134" width="264" height="82"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Ew-xk-bYl">
+                                <rect key="frame" x="45" y="338" width="285" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="60"/>
-                                <color key="textColor" red="0.73831772799999995" green="0.08215675503" blue="0.086565114560000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gym" translatesAutoresizingMaskIntoConstraints="NO" id="GRD-qR-DfB">
+                                        <rect key="frame" x="16" y="11" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="OwY-sN-vfh">
+                                        <rect key="frame" x="252" y="12" width="22" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gym name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oK2-Mn-6tg">
+                                        <rect key="frame" x="48" y="7" width="201" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.11372549019607843" green="0.13725490196078433" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="uab-N8-gaB"/>
@@ -296,6 +316,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emailTextField" destination="LTk-J2-FCV" id="bQ7-uS-0GQ"/>
+                        <outlet property="gymNameTextField" destination="oK2-Mn-6tg" id="0fc-37-KLY"/>
                         <outlet property="nameTextField" destination="De3-LH-h71" id="S55-b4-2dr"/>
                         <outlet property="passwordTextField" destination="UTy-oJ-OKw" id="8FH-p4-tyE"/>
                     </connections>
