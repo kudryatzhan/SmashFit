@@ -35,22 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize client ID of Google Sign In
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         
-        //        // Check if user is signed in
-        //        Auth.auth().addStateDidChangeListener { (auth, user) in
-        //
-        //            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //            let welcomeVC = storyboard.instantiateViewController(withIdentifier: "WelcomeView")
-        //            let workoutVC = storyboard.instantiateViewController(withIdentifier: "MainView")
-        //
-        //            if let user = user, user.isEmailVerified {
-        //                // User is signed in
-        //                UIApplication.shared.keyWindow?.rootViewController = workoutVC
-        //            } else {
-        //                // No user is signed in
-        //                self.window?.rootViewController = welcomeVC
-        //            }
-        //        }
-        
+        // Check if user is signed in
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let welcomeVC = storyboard.instantiateViewController(withIdentifier: "WelcomeView")
         let workoutVC = storyboard.instantiateViewController(withIdentifier: "MainView")
@@ -62,6 +47,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             // No user is signed in
             self.window?.rootViewController = welcomeVC
+        }
+        
+        // Fill allgyms array
+        let gymsRef = Database.database().reference(withPath: "gyms")
+        gymsRef.observe(.value) { (snapshot) in
+            if let values = snapshot.value as? [String: Any] {
+                for key in values.keys {
+                    if !allGymsList.contains(key) {
+                        allGymsList.append(key)
+                    }
+                }
+            }
         }
         
         return true

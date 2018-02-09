@@ -23,6 +23,8 @@
 		B27C6A63202AABCF00A5ADBB /* AddWorkoutPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C6A62202AABCF00A5ADBB /* AddWorkoutPopUpViewController.swift */; };
 		B27C6A6A202B60DC00A5ADBB /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C6A69202B60DC00A5ADBB /* Workout.swift */; };
 		B27C6A6C202B615500A5ADBB /* WorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C6A6B202B615500A5ADBB /* WorkoutController.swift */; };
+		B27C6A71202CE9C900A5ADBB /* SearchGymViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C6A70202CE9C900A5ADBB /* SearchGymViewController.swift */; };
+		B27C6A73202D1C5600A5ADBB /* AddNewGymViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27C6A72202D1C5600A5ADBB /* AddNewGymViewController.swift */; };
 		B2A99DA920205CEB00EE8389 /* AthleteSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DA820205CEB00EE8389 /* AthleteSignUpViewController.swift */; };
 		B2A99DAC2020D8C700EE8389 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */; };
 		B2A99DAE2020E50500EE8389 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A99DAD2020E50500EE8389 /* ResetPasswordViewController.swift */; };
@@ -47,6 +49,8 @@
 		B27C6A62202AABCF00A5ADBB /* AddWorkoutPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutPopUpViewController.swift; sourceTree = "<group>"; };
 		B27C6A69202B60DC00A5ADBB /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		B27C6A6B202B615500A5ADBB /* WorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutController.swift; sourceTree = "<group>"; };
+		B27C6A70202CE9C900A5ADBB /* SearchGymViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGymViewController.swift; sourceTree = "<group>"; };
+		B27C6A72202D1C5600A5ADBB /* AddNewGymViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGymViewController.swift; sourceTree = "<group>"; };
 		B2A99DA820205CEB00EE8389 /* AthleteSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteSignUpViewController.swift; sourceTree = "<group>"; };
 		B2A99DAB2020D8C700EE8389 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B2A99DAD2020E50500EE8389 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 				B227A6222020464C00E5BAEE /* WelcomeViewController.swift */,
 				B2A99DA820205CEB00EE8389 /* AthleteSignUpViewController.swift */,
 				B27C6A5E202A7E5500A5ADBB /* CoachSignUpViewController.swift */,
+				B27C6A70202CE9C900A5ADBB /* SearchGymViewController.swift */,
+				B27C6A72202D1C5600A5ADBB /* AddNewGymViewController.swift */,
 				B2A99DAD2020E50500EE8389 /* ResetPasswordViewController.swift */,
 				B267C6302029186700193533 /* WorkoutViewController.swift */,
 				B27C6A62202AABCF00A5ADBB /* AddWorkoutPopUpViewController.swift */,
@@ -315,12 +321,14 @@
 				B27C6A5F202A7E5500A5ADBB /* CoachSignUpViewController.swift in Sources */,
 				B27C6A61202A954500A5ADBB /* Helpers.swift in Sources */,
 				B27C6A63202AABCF00A5ADBB /* AddWorkoutPopUpViewController.swift in Sources */,
+				B27C6A73202D1C5600A5ADBB /* AddNewGymViewController.swift in Sources */,
 				B267C6312029186700193533 /* WorkoutViewController.swift in Sources */,
 				B2A99DA920205CEB00EE8389 /* AthleteSignUpViewController.swift in Sources */,
 				B21F8283202A24950006A9E2 /* User.swift in Sources */,
 				B2A99DAE2020E50500EE8389 /* ResetPasswordViewController.swift in Sources */,
 				B27C6A6C202B615500A5ADBB /* WorkoutController.swift in Sources */,
 				B2A99DAC2020D8C700EE8389 /* SettingsViewController.swift in Sources */,
+				B27C6A71202CE9C900A5ADBB /* SearchGymViewController.swift in Sources */,
 				B227A6292020464C00E5BAEE /* SmashFit.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -462,7 +470,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Q7U33G44V;
 				INFOPLIST_FILE = SmashFit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.SmashFit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -479,7 +487,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Q7U33G44V;
 				INFOPLIST_FILE = SmashFit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.self.SmashFit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
