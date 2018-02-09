@@ -9,17 +9,16 @@
 import UIKit
 import Firebase
 
-class CoachSignUpViewController: UIViewController {
+class CoachSignUpViewController: UIViewController, GymCellDelegate {
     
     // MARK: - IBOutlets
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var gymNameTextField: UITextField!
     
+    @IBOutlet weak var gymNameLabel: UILabel!
     
     // MARK: - Properties
-    
     
     // MARK: - Lifecycle functions
     override func viewDidLoad() {
@@ -35,7 +34,7 @@ class CoachSignUpViewController: UIViewController {
             let name = nameTextField.text, !name.isEmpty,
             let email = emailTextField.text, !email.isEmpty,
             let password = passwordTextField.text, !password.isEmpty,
-            let gymName = gymNameTextField.text, !gymName.isEmpty else {
+            let gymName = gymNameLabel.text, !gymName.isEmpty, gymName != "Your gym name" else {
                 
                 // Create an alert
                 let alertController = UIAlertController(title: "Registration Error", message: "Please make sure you provide your name, email address and password to complete the registration.", preferredStyle: .alert)
@@ -98,6 +97,19 @@ class CoachSignUpViewController: UIViewController {
             }
         }
         
+    }
+    
+    // MARK: - GymCellDelegate
+    func gymWasSelectedWithName(_ name: String) {
+        self.gymNameLabel.text = name
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowGymSearchVC",
+            let destinationVC = segue.destination as? SearchGymViewController {
+            
+            destinationVC.delegate = self
+        }
     }
     
 }

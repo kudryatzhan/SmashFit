@@ -24,3 +24,6 @@ let dateIdentifierFormatter: DateFormatter = {
 
 // currentLoggedInUser
 var currentLoggedInUser: User?
+
+// all gym list
+var allGymsList: [String] = []

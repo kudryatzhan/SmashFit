@@ -21,7 +21,14 @@ class AddNewGymViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBOutlet weak var gymName: UITextField!
+    @IBAction func saveBarButtonItemPressed(_ sender: UIBarButtonItem) {
+        if let gymName = gymName.text {
+            allGymsList.append(gymName)
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
