@@ -9,21 +9,42 @@
 import UIKit
 import Firebase
 
-class CoachSignUpViewController: UIViewController, GymCellDelegate {
+class CoachSignUpViewController: UIViewController, GymCellDelegate, UITextFieldDelegate {
     
     // MARK: - IBOutlets
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var pickGymButton: UIButton!
+    @IBOutlet weak var middleConstraint: NSLayoutConstraint!
     
-    @IBOutlet weak var gymNameLabel: UILabel!
     
     // MARK: - Properties
+
     
     // MARK: - Lifecycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Send notifications when keyboard status change
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Change pickGymButton's color
+        if pickGymButton.currentTitle != "Pick your gym here" {
+            pickGymButton.setTitleColor(.black, for: .normal)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Dismiss keyboard
+        self.view.endEditing(true)
     }
     
     // MARK: - IBActions
@@ -34,7 +55,7 @@ class CoachSignUpViewController: UIViewController, GymCellDelegate {
             let name = nameTextField.text, !name.isEmpty,
             let email = emailTextField.text, !email.isEmpty,
             let password = passwordTextField.text, !password.isEmpty,
-            let gymName = gymNameLabel.text, !gymName.isEmpty, gymName != "Your gym name" else {
+            let gymName = pickGymButton.currentTitle, !gymName.isEmpty, gymName != "Pick your gym here" else {
                 
                 // Create an alert
                 let alertController = UIAlertController(title: "Registration Error", message: "Please make sure you provide your name, email address and password to complete the registration.", preferredStyle: .alert)
@@ -99,9 +120,17 @@ class CoachSignUpViewController: UIViewController, GymCellDelegate {
         
     }
     
+    // background was tapped
+    @IBAction func backgroundWasTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
     // MARK: - GymCellDelegate
-    func gymWasSelectedWithName(_ name: String) {
-        self.gymNameLabel.text = name
+    func gymWasSelectedWithName(_ name: String, forAthlete: Bool) {
+        if !forAthlete {
+            self.pickGymButton.setTitle(name, for: .normal)
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -109,7 +138,38 @@ class CoachSignUpViewController: UIViewController, GymCellDelegate {
             let destinationVC = segue.destination as? SearchGymViewController {
             
             destinationVC.delegate = self
+            destinationVC.isSignupPageForAthlete = false
         }
+    }
+    
+    // MARK: - UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTextField {
+            emailTextField.becomeFirstResponder()
+        } else if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            view.endEditing(true)
+        }
+        return true
+    }
+    
+    // MARK: - Helper Methods
+    @objc func keyboardWillChange(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+            let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect
+            else { return }
+        adjustMiddleConstraint(to: -keyboardFrame.height/3)
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        adjustMiddleConstraint(to: 0)
+    }
+    
+    fileprivate func adjustMiddleConstraint(to constant: CGFloat) {
+        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: [], animations: {
+            self.middleConstraint.constant = constant
+        }, completion: nil)
     }
     
 }

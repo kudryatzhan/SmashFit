@@ -10,16 +10,19 @@ import UIKit
 import Firebase
 
 protocol GymCellDelegate: class {
-    func gymWasSelectedWithName(_ name: String)
+    func gymWasSelectedWithName(_ name: String, forAthlete: Bool)
 }
 
 class SearchGymViewController: UIViewController, UISearchResultsUpdating {
  
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addNewGymButton: UIButton!
     
     // MARK: - Properties
     weak var delegate: GymCellDelegate?
+    // Property for button be hidden or not
+    var isSignupPageForAthlete = true
     
     // Search Controller
     var searchController: UISearchController!
@@ -47,6 +50,11 @@ class SearchGymViewController: UIViewController, UISearchResultsUpdating {
         searchController.searchBar.barTintColor = .white
         searchController.searchBar.backgroundImage = UIImage()
         searchController.searchBar.tintColor = #colorLiteral(red: 0.738317728, green: 0.08215675503, blue: 0.08656511456, alpha: 1)
+        
+        // hide button for athlete
+        addNewGymButton.isHidden = isSignupPageForAthlete ? true : false
+    
+        searchController.hidesNavigationBarDuringPresentation = false
     }
     
     // MARK: - UISearchResultsUpdating
@@ -98,7 +106,8 @@ extension SearchGymViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let gym = (searchController.isActive) ? searchResults[indexPath.row] : allGymsSorted[indexPath.row]
-        delegate?.gymWasSelectedWithName(gym)
+        let boolIfAthlete = isSignupPageForAthlete ? true : false
+        delegate?.gymWasSelectedWithName(gym, forAthlete: boolIfAthlete)
         self.navigationController?.popViewController(animated: true)
     }
 }
