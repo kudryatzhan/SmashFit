@@ -21,6 +21,11 @@ class AddWorkoutPopUpViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var wodDescriptionTextView: UITextView!
     @IBOutlet weak var saveButton: UIButton!
     
+    @IBOutlet weak var topConstraint: NSLayoutConstraint!
+    @IBOutlet weak var addWODLabel: UILabel!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     // MARK: - Properties
     let dropDown = DropDown()
     weak var delegate: WodDescriptionTextViewDelegate?
@@ -73,6 +78,10 @@ class AddWorkoutPopUpViewController: UIViewController, UITextViewDelegate {
             print("Selected item: \(item) at index: \(index)")
             self.typeButton.setTitle(item, for: .normal)
         }
+        
+        // Send notifications when keyboard status change
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -83,5 +92,28 @@ class AddWorkoutPopUpViewController: UIViewController, UITextViewDelegate {
         if textView.text == "Please enter wod decription here..." {
             textView.text = ""
         }
+        
+    }
+    
+    // MARK: - Helper Methods
+    @objc func keyboardWillChange(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+            let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect
+            else { return }
+        adjustTopConstraintTo(topConstant: 30, bottomConstant: -keyboardFrame.height)
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        adjustTopConstraintTo(topConstant: 136, bottomConstant: 0)
+    }
+    
+    fileprivate func adjustTopConstraintTo(topConstant: CGFloat, bottomConstant: CGFloat) {
+        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: [], animations: {
+            self.topConstraint.constant = topConstant
+            self.bottomConstraint.constant = bottomConstant
+            self.addWODLabel.isHidden = true
+            self.typeLabel.isHidden = true
+            self.typeButton.isHidden = true
+        }, completion: nil)
     }
 }
