@@ -13,18 +13,23 @@ class ResetPasswordViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var middleConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Send notifications when keyboard status change
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        // Dismiss keyboard
+        self.view.endEditing(true)
+    }
+
     // MARK: - IBActions
     
     @IBAction func resetPassword(_ sender: UIButton) {
@@ -65,6 +70,35 @@ class ResetPasswordViewController: UIViewController {
             
             self.present(alertController, animated: true, completion: nil)
         }
+    }
+    
+    // background was tapped
+    @IBAction func backgroundWasTapped(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    // MARK: - UITextFieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
+    
+    // MARK: - Helper Methods
+    @objc func keyboardWillChange(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+            let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect
+            else { return }
+        adjustMiddleConstraint(to: -keyboardFrame.height/3)
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        adjustMiddleConstraint(to: 0)
+    }
+    
+    fileprivate func adjustMiddleConstraint(to constant: CGFloat) {
+        UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: [], animations: {
+            self.middleConstraint.constant = constant
+        }, completion: nil)
     }
     
 }
