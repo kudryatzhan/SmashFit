@@ -34,7 +34,7 @@ class WorkoutViewController: UIViewController, UITextViewDelegate, WodDescriptio
                 let isAthlete = values["isAthlete"] as? Bool {
                 
                 self.isAthleteLoggedIn = isAthlete
-                self.wodTextView.isEditable =  self.isAthleteLoggedIn ? false : true
+                self.wodTextView.isEditable = false
                 self.addWorkoutButton.isHidden = self.isAthleteLoggedIn ? true : false
             }
         }

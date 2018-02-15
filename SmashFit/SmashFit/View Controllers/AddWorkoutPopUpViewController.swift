@@ -27,7 +27,7 @@ class AddWorkoutPopUpViewController: UIViewController, UITextViewDelegate {
     
     // MARK: - IBActions
     @IBAction func saveWOD(_ sender: UIButton) {
-        if let workoutText = wodDescriptionTextView.text, !workoutText.isEmpty,
+        if let workoutText = wodDescriptionTextView.text, !workoutText.isEmpty, workoutText != "Please enter wod decription here...",
             let workoutType = typeButton.currentTitle, workoutType != "Choose WOD type..." {
             
             delegate?.wodTextViewDidEndEditig(with: workoutText)
@@ -37,6 +37,11 @@ class AddWorkoutPopUpViewController: UIViewController, UITextViewDelegate {
             WorkoutController.shared.saveToFirebase(workout: workout)
             
             dismiss(animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(title: "Error", message: "Please make sure you choose workout type, and provide description below.", preferredStyle: .alert)
+            let okayAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(okayAction)
+            present(alertController, animated: true, completion: nil)
         }
     }
     
@@ -46,6 +51,10 @@ class AddWorkoutPopUpViewController: UIViewController, UITextViewDelegate {
     
     @IBAction func chooseTypeButtonTapped(_ sender: UIButton) {
         dropDown.show()
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        wodDescriptionTextView.resignFirstResponder()
     }
     
     // MARK: - Lifecycle functions
@@ -63,6 +72,16 @@ class AddWorkoutPopUpViewController: UIViewController, UITextViewDelegate {
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
             self.typeButton.setTitle(item, for: .normal)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        view.endEditing(true)
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.text == "Please enter wod decription here..." {
+            textView.text = ""
         }
     }
 }
