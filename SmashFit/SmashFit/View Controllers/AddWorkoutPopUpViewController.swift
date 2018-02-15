@@ -24,7 +24,8 @@ class AddWorkoutPopUpViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var topConstraint: NSLayoutConstraint!
     @IBOutlet weak var addWODLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomVCConstraint: NSLayoutConstraint!
+    @IBOutlet weak var wodLeadingConstraint: NSLayoutConstraint!
     
     // MARK: - Properties
     let dropDown = DropDown()
@@ -100,20 +101,26 @@ class AddWorkoutPopUpViewController: UIViewController, UITextViewDelegate {
         guard let userInfo = notification.userInfo,
             let keyboardFrame = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect
             else { return }
-        adjustTopConstraintTo(topConstant: 30, bottomConstant: -keyboardFrame.height)
+        adjustTopConstraintTo(topConstant: 30, bottomConstant: keyboardFrame.height, leadingConstant: 40)
+        
+        self.addWODLabel.isHidden = true
+        self.typeLabel.isHidden = true
+        self.typeButton.isHidden = true
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
-        adjustTopConstraintTo(topConstant: 136, bottomConstant: 0)
+        adjustTopConstraintTo(topConstant: 136, bottomConstant: 69, leadingConstant: 20)
+        self.addWODLabel.isHidden = false
+        self.typeLabel.isHidden = false
+        self.typeButton.isHidden = false
     }
     
-    fileprivate func adjustTopConstraintTo(topConstant: CGFloat, bottomConstant: CGFloat) {
+    fileprivate func adjustTopConstraintTo(topConstant: CGFloat, bottomConstant: CGFloat, leadingConstant: CGFloat) {
+        
         UIView.animate(withDuration: 0.3, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: [], animations: {
+            self.wodLeadingConstraint.constant = leadingConstant
             self.topConstraint.constant = topConstant
-            self.bottomConstraint.constant = bottomConstant
-            self.addWODLabel.isHidden = true
-            self.typeLabel.isHidden = true
-            self.typeButton.isHidden = true
+            self.bottomVCConstraint.constant = bottomConstant
         }, completion: nil)
     }
 }
