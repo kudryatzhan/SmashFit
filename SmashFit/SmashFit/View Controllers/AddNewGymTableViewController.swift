@@ -15,12 +15,9 @@ class AddNewGymTableViewController: UITableViewController {
     
     
     // MARK: - IBActions
-    @IBAction func addImageButtonPressed(_ sender: UIButton) {
-        
-    }
     
     @IBAction func saveBarButtonItemPressed(_ sender: UIBarButtonItem) {
-        if let name = nameTextField.text {
+        if let name = nameTextField.text, !name.isEmpty {
             allGymsList.append(name)
             self.navigationController?.popViewController(animated: true)
         }

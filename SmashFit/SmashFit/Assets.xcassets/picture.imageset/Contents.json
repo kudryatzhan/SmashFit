@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "invictusLabel.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "picture.png",
       "scale" : "2x"
     },
     {

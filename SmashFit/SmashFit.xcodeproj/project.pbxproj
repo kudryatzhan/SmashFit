@@ -120,7 +120,6 @@
 				B227A6202020464C00E5BAEE /* AppDelegate.swift */,
 				B21F8284202A24980006A9E2 /* Model */,
 				B27C6A57202A39B000A5ADBB /* Model Controllers */,
-				B27C6A64202AD8E700A5ADBB /* Views */,
 				B2A99DAA20205CF100EE8389 /* View Controllers */,
 				B227A6242020464C00E5BAEE /* Main.storyboard */,
 				B227A62A2020464C00E5BAEE /* Assets.xcassets */,
@@ -140,13 +139,6 @@
 				B27C6A6B202B615500A5ADBB /* WorkoutController.swift */,
 			);
 			path = "Model Controllers";
-			sourceTree = "<group>";
-		};
-		B27C6A64202AD8E700A5ADBB /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		B2A99DAA20205CF100EE8389 /* View Controllers */ = {
